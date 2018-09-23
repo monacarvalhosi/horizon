@@ -1,0 +1,14 @@
+/*$funcionarios = DB::table("wtg_funcionario")->get();
+        view()->share('funcionarios',$funcionarios);*/
+
+
+<tbody>
+			@foreach ($funcionarios as $key => $value)
+			<tr>
+				<td>{{ $value->fun_nome }}</td>
+				<td>{{ $value->fun_salario }}</td>
+			</tr>
+			@endforeach
+		</tbody>
+
+<button class="btn btn-success" href="{{ route('generate-pdf',['download'=>'pdf']) }}">Download PDF</button>
